@@ -7,7 +7,7 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 
 // team array
-const teamArray = []; 
+const teamArr = []; 
 
 // requirements
 
@@ -19,7 +19,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
-// start of manager prompts 
+// start of prompts
 const addManager = () => {
     return inquirer.prompt ([
         {
@@ -80,7 +80,7 @@ const addManager = () => {
         const  { name, id, email, officeNumber } = managerInput; 
         const manager = new Manager (name, id, email, officeNumber);
 
-        teamArray.push(manager); 
+        teamArr.push(manager); 
         console.log(manager); 
     })
 };
@@ -96,18 +96,18 @@ const addEmployee = () => {
         {
             type: 'list',
             name: 'role',
-            message: "Please choose your employee's role",
+            message: "Select your employee's role",
             choices: ['Engineer', 'Intern']
         },
         {
             type: 'input',
             name: 'name',
-            message: "What's the name of the employee?", 
+            message: "What is the name of the employee?", 
             validate: nameInput => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log ("Please enter an employee's name!");
+                    console.log ("Enter an employee's name!");
                     return false; 
                 }
             }
@@ -134,7 +134,7 @@ const addEmployee = () => {
                 if (valid) {
                     return true;
                 } else {
-                    console.log ('Please enter an email!')
+                    console.log ("Enter an email!")
                     return false; 
                 }
             }
@@ -142,13 +142,13 @@ const addEmployee = () => {
         {
             type: 'input',
             name: 'github',
-            message: "Enter the employee's github username.",
+            message: "Enter employee's github username.",
             when: (input) => input.role === "Engineer",
             validate: nameInput => {
                 if (nameInput ) {
                     return true;
                 } else {
-                    console.log ("Please enter the employee's github username!")
+                    console.log ("Enter the employee's github username!")
                 }
             }
         },
@@ -161,7 +161,7 @@ const addEmployee = () => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log ("Please enter the intern's school!")
+                    console.log ("Enter the intern's school!")
                 }
             }
         },
@@ -189,12 +189,12 @@ const addEmployee = () => {
             console.log(employee);
         }
 
-        teamArray.push(employee); 
+        teamArr.push(employee); 
 
         if (confirmAddEmployee) {
-            return addEmployee(teamArray); 
+            return addEmployee(teamArr); 
         } else {
-            return teamArray;
+            return teamArr;
         }
     })
 
@@ -215,8 +215,8 @@ const writeFile = data => {
 
 addManager()
   .then(addEmployee)
-  .then(teamArray => {
-    return html(teamArray);
+  .then(teamArr => {
+    return html(teamArr);
   })
   .then(pageHTML => {
     return writeFile(pageHTML);
