@@ -19,7 +19,7 @@ https://watch.screencastify.com/v/uPMdJk1TvTc0S71xWsey
 
 ## Description
 
-This project creates an App that generates README files. <br />
+Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person. <br />
 
 ## Installation
 
@@ -30,9 +30,13 @@ This project creates an App that generates README files. <br />
 
 ## Usage
 
-Use to create README.md for all your projects <br />
+Use to create teams for projects <br />
 ## Languages/Technology Used
+Programming languages used:
 
+HTML
+CSS
+Node.js
  <br />
 
 ## License
