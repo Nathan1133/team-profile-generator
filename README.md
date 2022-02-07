@@ -34,9 +34,9 @@ Use to create teams for projects <br />
 ## Languages/Technology Used
 Programming languages used:
 
-HTML
-CSS
-Node.js
+HTML <br />
+CSS <br />
+Node.js <br />
  <br />
 
 ## License
