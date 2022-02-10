@@ -49,8 +49,10 @@ Code partially used from Github: nicolewallace09
  <br />
 ## Tests
 Unit Tests 
+
 <br />
-## Questions?
+
+## Questions
 If you have any questions about the project, contact me at: 
 nate@fake.com <br />
 Check out the rest of my work at: 
